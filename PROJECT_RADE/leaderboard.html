@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanUp Challenge - Leaderboard</title>
+  <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<nav class="top-nav">
+    
+  <div class="logo" onclick="goPage('dashboard.html')">CLEANUP.eco</div>
+  
+  
+  
+</div>
+  <div class="nav-links">
+    <button onclick="goPage('dashboard.html')">DASHBOARD</button>
+    <button onclick="goPage('store.html')">ECO STORE</button>
+    <button onclick="goPage('map.html')">AI-MAPS</button>
+    <button onclick="goPage('user.html')">PROFILE</button>
+  </div>
+</nav>
+
+<main class="leaderboard-main">
+
+  <!-- Global Leaderboard -->
+  <section class="leaderboard-container global-board">
+    <h1>🌏 GLOBAL LEADERBOARD</h1>
+    <table id="global-leaderboard">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Side leaderboards (smaller, same data) -->
+  <section class="side-leaderboards">
+    <div class="leaderboard-container side-board">
+      <h1>🌐 REGIONAL LEADERBOARD</h1>
+      <table id="regional-leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Username</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="leaderboard-container side-board">
+      <h1>📅 WEEKLY LEADERBOARD</h1>
+      <table id="weekly-leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Username</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<script src="leaderboard.js"></script>
+</body>
+</html>

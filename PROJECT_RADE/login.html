@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO STREAKS🔥 - Login/signup</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<!-- Background leaf container -->
+<div class="background" id="leafContainer"></div>
+
+<div class="auth-container">
+  <h1 class="logo">ECO STREAKS🔥</h1>
+
+  <div class="tab-container">
+    <button class="tab-btn active" onclick="showForm('login')">Login</button>
+    <button class="tab-btn" onclick="showForm('signup')">Sign Up</button>
+  </div>
+
+  <!-- LOGIN -->
+  <form id="loginForm" class="auth-form">
+    <input type="text" id="loginUsername" placeholder="Username"><br>
+    <input type="password" id="loginPassword" placeholder="Password"><br>
+    <label><input type="checkbox" id="remember"> Remember Me</label><br>
+    <button type="button" onclick="login()">Login</button>
+    <div id="loginError" class="error"></div>
+  </form>
+
+  <!-- SIGNUP -->
+  <form id="signupForm" class="auth-form" style="display:none;">
+    <input type="text" id="signupUsername" placeholder="Username"><br>
+    <input type="password" id="signupPassword" placeholder="Password"><br>
+    <input type="password" id="signupConfirm" placeholder="Confirm Password"><br>
+    <button type="button" onclick="signup()">Sign Up</button>
+    <div id="signupError" class="error"></div>
+  </form>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanUp Challenge - Profile</title>
+  <link rel="stylesheet" href="user.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Background -->
+<div class="background"></div>
+
+<!-- Top Navigation Bar -->
+<nav class="top-nav">
+  <div class="logo" onclick="goPage('dashboard.html')">CLEANUP.eco</div>
+  <div class="nav-links">
+    <button onclick="goPage('dashboard.html')">DASHBOARD</button>
+    <button onclick="goPage('leaderboard.html')">LEADERBOARD</button>
+    <button onclick="goPage('store.html')">ECO STORE</button>
+    <button onclick="goPage('map.html')">AI-MAPS</button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <img src="albert.jpg" alt="Profile Picture" class="profile-pic">
+    <h1 id="usernameDisplay">Username</h1>
+    <div class="buttons">
+      <button onclick="openUsernamePopup()" class="edit-btn">Edit Username</button>
+      <button onclick="logout()" class="edit-btn">Logout</button>
+    </div>
+  </div>
+
+  <!-- Stats Cards 2x2 Grid -->
+  <div class="stats-cards">
+    <div class="stat-card">
+      <h3>Points</h3>
+      <p id="pointsDisplay">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>Streak</h3>
+      <p id="streakDisplay">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>Rank</h3>
+      <p id="rankDisplay">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>Current AQI</h3>
+      <p id="aqiDisplay">N/A</p>
+    </div>
+  </div>
+
+  <!-- Username Edit Popup -->
+  <div class="username-popup" id="usernamePopup">
+    <div class="popup-content">
+      <h3>Change Username</h3>
+      <input type="text" id="usernameInput" placeholder="Enter new username">
+      <div class="popup-buttons">
+        <button onclick="updateUsername()">Save</button>
+        <button onclick="closeUsernamePopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="user.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: #07411d;
+  pointer-events: none;
+  overflow: visible; 
+}
+
+
+.leaf {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.9;
+  animation: fall linear infinite;
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(-120px) translateX(0px) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(30px) rotate(180deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-30px) rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
+
+.auth-container {
+  background: rgba(255, 255, 255, 0.164);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(3px);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00b09b, #96c93d, #00b09b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: slide 3s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes slide {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+.auth-form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.auth-form button {
+  padding: 12px 25px;
+  background: #00b09b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 95%;
+}
+
+.auth-form button:hover {
+  background: #019a8b;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #eee;
+  border-radius: 6px;
+  margin: 0 5px;
+}
+
+.tab-btn.active {
+  background: #00b09b;
+  color: white;
+}

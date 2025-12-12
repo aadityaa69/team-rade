@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CleanUp Challenge - Maps</title>
+  <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+
+<div class="background"></div>
+
+<nav class="top-nav">
+  <div class="logo" onclick="goPage('dashboard.html')">CLEANUP.eco</div>
+
+  <div class="nav-links">
+    <button onclick="goPage('dashboard.html')">DASHBOARD</button>
+    <button onclick="goPage('leaderboard.html')">LEADERBOARD</button>
+    <button onclick="goPage('store.html')">ECO STORE</button>
+    <button onclick="goPage('user.html')">PROFILE</button>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="map-section">
+
+    <h1 class="map-title">🌍 Locate Public Dustbins</h1>
+
+    
+    <div class="map-container" id="mapContainer">
+      <img src="maps.jpg" id="mapImage">
+      <div id="mainMarkers"></div>
+    </div>
+
+    <button class="compare-btn" onclick="openDustbinForm()">➕ Post New Dustbin</button>
+
+    <h2 class="current-title">Current Dustbins</h2>
+    <div class="dustbins-container" id="dustbinsContainer"></div>
+
+  </div>
+</main>
+
+
+<div class="popup-overlay" id="dustbinPopup">
+  <div class="popup-box">
+    <h2>Add Dustbin 🗑️</h2>
+    <input type="text" id="dustbinName" placeholder="Place Name">
+    <input type="file" id="dustbinImage" accept="image/*">
+    <p>Click on the map below to mark location</p>
+
+    <div class="map-popup-container" id="popupMapContainer">
+      <img src="maps.jpg" id="popupMapImage">
+      <div id="popupMarker" class="marker"></div>
+    </div>
+
+    <button class="popup-btn" onclick="saveDustbin()">Save</button>
+    <button class="popup-btn" onclick="closeDustbinForm()">Cancel</button>
+  </div>
+</div>
+
+
+<div class="popup-overlay" id="viewDustbinPopup">
+  <div class="popup-box">
+    <h2 id="viewDustbinName"></h2>
+    <img id="viewDustbinImage" style="width:200px;height:150px;border-radius:12px;object-fit:cover;margin-bottom:10px;">
+    <div class="map-popup-container" id="viewPopupMapContainer">
+      <img src="maps.jpg" id="viewPopupMapImage">
+      <div id="viewPopupMarker" class="marker"></div>
+    </div>
+    <button class="popup-btn" onclick="closeViewDustbinForm()">Close</button>
+  </div>
+</div>
+
+<script src="map.js"></script>
+</body>
+</html>

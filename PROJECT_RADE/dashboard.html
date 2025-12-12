@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanUp Challenge - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<nav class="top-nav">
+  <div class="logo">
+    <img src="leaf.png" alt="Logo" class="nav-logo">
+    CLEANUP.eco
+  </div>
+  <div class="nav-links">
+    <button onclick="goPage('leaderboard.html')">LEADERBOARD</button>
+    <button onclick="goPage('store.html')">ECO STORE</button>
+    <button onclick="goPage('map.html')">AI-MAPS</button>
+    <button onclick="goPage('user.html')">PROFILE</button>
+  </div>
+</nav>
+
+<main class="main-content">
+
+  
+  <div class="welcome-container">
+    <span id="welcomeText"></span>
+  </div>
+
+  
+  <div class="compare-section">
+    <h1>🏆UPLOAD AND GET YOUR CLEANLINESS REWARD🏆</h1>
+    <div class="upload-container">
+      <div class="image-card">
+        <h2>BEFORE 🔴</h2>
+        <input type="file" id="beforeInput" accept="image/*">
+        <img id="beforePreview" src="">
+      </div>
+      <div class="image-card">
+        <h2>AFTER 🟢</h2>
+        <input type="file" id="afterInput" accept="image/*">
+        <img id="afterPreview" src="">
+      </div>
+    </div>
+    <button class="compare-btn" onclick="compareImages()">Compare Cleanliness</button>
+    <div id="result"></div>
+  </div>
+
+  <
+  <div class="news-section">
+    <h2>🌿 Community News & Updates</h2>
+    <div class="news-container" id="newsContainer">
+     
+    </div>
+
+    
+    <div class="popup-overlay" id="newsPopup">
+      <div class="popup-box">
+        <h2>Add News 📰</h2>
+        <input type="text" id="newsTitle" placeholder="Title">
+        <textarea id="newsContent" placeholder="Content" rows="4"></textarea>
+        <input type="file" id="newsImage" accept="image/*">
+        <button class="popup-btn" onclick="saveNews()">Save</button>
+        <button class="popup-btn" onclick="closeNewsPopup()">Cancel</button>
+      </div>
+    </div>
+
+    <button class="compare-btn" onclick="openNewsPopup()">➕ Add News</button>
+  </div>
+
+</main>
+
+
+<div class="popup-overlay" id="limitPopup">
+  <div class="popup-box">
+    <h2>⚠ Upload Limit Reached</h2>
+    <p>You can only upload <b>5 BEFORE/AFTER</b> sets every 24 hours.<br><br>Please try again later</p>
+    <button class="popup-btn" onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

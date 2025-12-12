@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanUp Challenge - Eco Store</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="store.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<!-- Top Navigation Bar -->
+<nav class="top-nav">
+  <div class="logo">CLEANUP.eco</div>
+  <div class="nav-links">
+    
+    <button onclick="goPage('dashboard.html')">DASHBOARD</button>
+    <button onclick="goPage('leaderboard.html')">LEADERBOARD</button>
+    
+    <button onclick="goPage('map.html')">AI-MAPS</button>
+    <button onclick="goPage('user.html')">PROFILE</button>
+  </div>
+</nav>
+
+<!-- Current Points Display -->
+<div class="points-balance">
+  YOUR POINTS: <span id="currentPoints">0</span>
+</div>
+
+<main class="main-content">
+  <div class="welcome-container">
+    <span id="welcomeTextStore"></span>
+  </div>
+
+  <div class="store-section">
+    <h1>🌱 ECO STORE 🌱</h1>
+    <div class="store-container">
+      <!-- 8 Product Cards - Replace image URLs manually below -->
+      <div class="product-card" data-id="1" data-price="10">
+        <div class="product-img" style="background-image: url('bottel.jpg');"></div>
+        <h3>Reusable Bottle</h3>
+        <p>Price: 10 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="2" data-price="15">
+        <div class="product-img" style="background-image: url('bag.jpg');"></div>
+        <h3>Eco Tote Bag</h3>
+        <p>Price: 15 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="3" data-price="20">
+        <div class="product-img" style="background-image: url('seed.jpg');"></div>
+        <h3>Plant Seeds Kit</h3>
+        <p>Price: 20 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="4" data-price="25">
+        <div class="product-img" style="background-image: url('keychain.jpg');"></div>
+        <h3>Solar Keychain</h3>
+        <p>Price: 25 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="5" data-price="30">
+        <div class="product-img" style="background-image: url('note.jpg');"></div>
+        <h3>Eco Notebook</h3>
+        <p>Price: 30 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="6" data-price="35">
+        <div class="product-img" style="background-image: url('straw.jpg');"></div>
+        <h3>Biodegradable Straw</h3>
+        <p>Price: 35 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="7" data-price="40">
+        <div class="product-img" style="background-image: url('compostbin.jpg');"></div>
+        <h3>Compost Bin</h3>
+        <p>Price: 40 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="8" data-price="50">
+        <div class="product-img" style="background-image: url('solarlamp.jpg');"></div>
+        <h3>Solar Lamp</h3>
+        <p>Price: 50 Points</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="cart-btn" id="openCart">🛒 View Cart</button>
+</main>
+
+<!-- Cart Popup -->
+<div class="popup-overlay" id="cartPopup">
+  <div class="popup-box">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="cartTotal"></p>
+    <button class="popup-btn" id="checkoutBtn">Proceed to Checkout</button>
+    <button class="popup-btn" onclick="closeCart()">Close</button>
+  </div>
+</div>
+
+<!-- Notification Toast -->
+<div id="toast"></div>
+
+<script src="store.js"></script>
+</body>
+</html>

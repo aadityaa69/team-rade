@@ -1,0 +1,222 @@
+/* Reset and Scrollable Body */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100%;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #b9dd98, #a8ec39);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #28a745, #1e824c);
+  border-radius: 20px;
+  border: 3px solid rgba(255,255,255,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1e824c, #28a745);
+}
+
+/* Background */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #b9dd98, #a8ec39);
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #15c297, #adf0ea);
+  backdrop-filter: blur(10px);
+  border: 2px solid #00b09b;
+  border-radius: 15px;
+  color: rgb(153, 228, 119);
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.top-nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #445040;
+  cursor: pointer;
+}
+
+.nav-links button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #259657;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+.nav-links button:hover {
+  background: #019a8b;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 140px 20px 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.profile-header .profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #259657;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.profile-header h1 {
+  font-size: 32px;
+  color: #00796b;
+  margin-bottom: 15px;
+}
+.profile-header .buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Buttons */
+.edit-btn, .logout-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #259657;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.edit-btn:hover, .logout-btn:hover {
+  background: #019a8b;
+}
+
+/* Stats Cards 2x2 Grid */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  grid-gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+  color: #00796b;
+  margin-bottom: 15px;
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #445040;
+}
+
+/* Username Popup */
+.username-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.username-popup .popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.username-popup h3 {
+  margin-bottom: 20px;
+  color: #00796b;
+}
+.username-popup input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #259657;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.popup-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  border: none;
+  background: #259657;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.popup-buttons button:hover {
+  background: #019a8b;
+}
+.nav-logo {
+  width: 30px;       /* adjust size */
+  height: 30px;      /* adjust size */
+  margin-right: 8px; /* space between logo and text */
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media(max-width: 500px){
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  .stat-card {
+    width: 90%;
+  }
+}
